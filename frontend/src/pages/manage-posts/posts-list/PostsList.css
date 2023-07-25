@@ -1,0 +1,28 @@
+.posts-list .posts-toggle-btn {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.posts-list .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.posts-list .cards .card-item {
+    margin: 5px;
+}
+
+@media screen and (max-width:768px) {
+    .posts-list .cards .card-item {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .posts-list .cards .card-item {
+        max-width: calc(20% - 30px);
+    }
+}

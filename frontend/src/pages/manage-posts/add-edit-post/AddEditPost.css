@@ -1,0 +1,22 @@
+.post-form {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  margin: 20px 10px;
+}
+
+.post-form h2 {
+  margin-bottom: 10px;
+}
+
+.post-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.post-form input,
+.post-form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+}

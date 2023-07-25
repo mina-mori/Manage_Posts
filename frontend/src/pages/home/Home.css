@@ -1,0 +1,42 @@
+/* Basic CSS for the Home page */
+.home {
+  padding: 20px 10px;
+}
+
+.home .post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home .post-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f8f8f8;
+}
+
+.home .post-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.home .post-item p {
+  margin: 5px 0;
+}
+
+.home .post-item button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.home .post-item button:hover {
+  background-color: #0056b3;
+}

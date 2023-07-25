@@ -1,0 +1,54 @@
+.card {
+  /* border: 1px solid; */
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(236, 234, 234);
+  line-height: 2;
+}
+
+.card .card-title {
+  font-weight: bold;
+  font-size: larger;
+  width: 80%;
+}
+
+.card .card-actions {
+  position: relative;
+  display: flex;
+  width: 20%;
+  justify-content: right;
+}
+
+.card .card-actions .actions-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: lightgray;
+  border: none;
+  border-radius: 50%;
+  padding: 0.95rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card .card-actions .actions-menu {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  min-width: 4rem;
+  box-shadow: 0px 2px 5px -2px;
+  background-color: white;
+  padding: 0.1rem 0;
+  z-index: 1000;
+}
+
+.card .card-actions .actions-menu .action {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.card .card-actions .actions-menu .action:hover {
+  background-color: lightgray;
+}

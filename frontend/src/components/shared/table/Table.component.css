@@ -1,0 +1,85 @@
+.shared-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shared-table th,
+.shared-table td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid gray;
+}
+
+.shared-table th {
+  cursor: pointer;
+}
+
+.shared-table th.sortable {
+  position: relative;
+}
+
+.shared-table th.sortable span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 4px;
+}
+
+.shared-table tbody tr:hover {
+  background-color: rgb(246, 246, 246);
+}
+
+.shared-table .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shared-table .footer .pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.shared-table .footer .pagination button {
+  padding: 8px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.shared-table .footer .pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.shared-table .footer .pagination button.current {
+  background-color: rgb(21, 35, 35);
+}
+
+.shared-table .footer .goto-page {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.shared-table .footer .goto-page input {
+  padding: 8px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.shared-table .footer .goto-page .page-no-input {
+  border-color: darkslategray;
+  max-width: 4rem;
+}
+
+.shared-table .footer .goto-page .goto-btn {
+  background-color: darkslategray;
+  color: white;
+  border: none;
+}

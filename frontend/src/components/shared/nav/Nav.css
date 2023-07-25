@@ -1,0 +1,26 @@
+/* Basic CSS for the Nav component */
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  background-color: darkslategray;
+}
+
+.nav-list ul {
+  list-style: none;
+  padding: 10px 5px;
+  margin: 0;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.nav-item a:hover {
+  color: lightgray;
+}
