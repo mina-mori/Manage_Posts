@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import {useHistory, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {createPost, getPostById, updatePost} from '../../../services/Posts.service';
 import {Post} from '../../../interfaces/post.interface';
-import './AddEditPost.css';
 import {Response} from '../../../interfaces/shared.interface';
+import Modal from '../../../components/shared/modal/Modal.component';
+import './AddEditPost.css';
 
 const initialFormData: Post = {
   _id: undefined,
@@ -11,9 +12,10 @@ const initialFormData: Post = {
 };
 
 const AddEditPost: React.FC = () => {
-  const history = useHistory();
   const {postId} = useParams<{ postId: string }>();
   const [formData, setFormData] = useState<Post>(initialFormData);
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [popupMessage, setPopupMessage] = useState<string>('');
 
   useEffect(() => {
     if (postId) {
@@ -38,23 +40,37 @@ const AddEditPost: React.FC = () => {
     e.preventDefault();
     try {
       postId ? await updatePost(formData) : await createPost(formData);
-      alert(`The post is ${postId ? 'edited' : 'added'} successfully`)
-      history.push('/');
+      setPopupMessage(`The post is ${postId ? 'edited' : 'added'} successfully`);
+      setShowPopup(true);
+      setFormData(initialFormData);
     } catch (error) {
-      alert('something went wront')
+      setPopupMessage('something went wront');
+      setShowPopup(true);
     }
   };
   return (
-    <div className="post-form">
-    <h2>{postId ? 'Edit Post' : 'Create Post'}</h2>
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>content</label>
-        <input type="text" name="content" value={formData.content} onChange={handleChange} minLength={1} required />
+    <>
+      <div className="post-form">
+        <h2>{postId ? 'Edit Post' : 'Create Post'}</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Content</label>
+            <input type="text" name="content" value={formData.content} onChange={handleChange} minLength={1} required />
+          </div>
+          <button type="submit">{postId ? 'Update Post' : 'Create Post'}</button>
+        </form>
+        <Modal isOpen={showPopup} onClose={()=> setShowPopup(false)}>
+            <> 
+              <h3>Message</h3>
+              <p>{popupMessage}</p>
+              <hr></hr>
+              <div style={{ textAlign: 'center' }}>
+                <button onClick={() => setShowPopup(false)}>Close</button>
+              </div>
+            </>
+        </Modal>
       </div>
-      <button type="submit">{postId ? 'Update Post' : 'Create Post'}</button>
-    </form>
-  </div>
+    </>
   );
 };
 

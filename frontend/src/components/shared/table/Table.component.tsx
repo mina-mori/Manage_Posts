@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
+import React, { BaseSyntheticEvent, useState } from 'react';
 import './Table.component.css';
 
 export interface Column {
@@ -13,7 +13,6 @@ interface Props {
   className?: string;
   totalCount: number;
   pageSize?: number;
-  page?:number;
   onRowClick?: (rowData: any) => void;
   onPageChange?: (page: number) => void
 }
@@ -24,7 +23,6 @@ const Table: React.FC<Props> = ({
   className,
   totalCount,
   pageSize = 10,
-  page,
   onRowClick,
   onPageChange
 }) => {
@@ -45,16 +43,10 @@ const Table: React.FC<Props> = ({
     : data;
 
   const totalPages = Math.ceil(totalCount / pageSize);
-  const paginatedData = sortedData.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize
-  );
-  useEffect(() => {
-    if(page) {
-      setCurrentPage(page)
-    }
-  },
-  [page])
+  // const paginatedData = sortedData.slice(
+  //   (currentPage - 1) * pageSize,
+  //   currentPage * pageSize
+  // );
   const handleSort = (column: Column) => {
     if (!column.sortable) return;
 
@@ -146,7 +138,7 @@ const Table: React.FC<Props> = ({
           </tr>
         </thead>
         <tbody>
-          {paginatedData.map((row, index) => (
+          {sortedData.map((row, index) => (
             <tr key={index} onClick={() => onRowClick && onRowClick(row)}>
               {columns.map((column) => (
                 <td key={column.key}>{row[column.key]}</td>

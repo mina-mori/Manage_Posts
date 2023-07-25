@@ -42,7 +42,7 @@ describe('Register component', () => {
     fireEvent.click(registerButton);
 
     // Wait for the error message to appear
-    const errorMessageElement = await screen.findByText(/registration failed/i);
+    const errorMessageElement = await screen.findByText(/something went wrong/i);
     expect(errorMessageElement).toBeInTheDocument();
   });
 });
