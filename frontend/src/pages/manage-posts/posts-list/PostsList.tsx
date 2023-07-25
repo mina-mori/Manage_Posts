@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {deletePost, getPosts} from '../../../services/Posts.service';
 import {Post} from '../../../interfaces/post.interface';
 import Table, {Column} from '../../../components/shared/table/Table.component';
-import ToggleButton from '../../../components/shared/toggle-button/ToggleButton';
-import Card from '../../../components/shared/card/Card';
+import ToggleButton from '../../../components/shared/toggle-button/ToggleButton.component';
+import Card from '../../../components/shared/card/Card.component';
 import {formatDate} from '../../../utils/Date.helper';
 import './PostsList.css';
 import {Response} from '../../../interfaces/shared.interface';
@@ -47,7 +47,7 @@ const PostList: React.FC = () => {
           actions: <>
             <button style={{margin:"0 5px 5px 0"}} onClick={() => history.push(`details/${post._id}`)}>Details</button>
             <button style={{margin:"0 5px 5px 0"}} onClick={() => history.push(`edit/${post._id}`)}>Edit</button>
-            <button style={{margin:"0 5px 5px 0"}} onClick={() =>post._id && handleDeletePost(post._id, index)}>Delete</button>
+            <button style={{margin:"0 5px 5px 0"}} onClick={() =>post?._id && handleDeletePost(post._id, index)}>Delete</button>
           </>
         };
         setTableData((items:any) => [...items, tableItem]);

@@ -22,7 +22,7 @@ const Register = () => {
             history.push('/login');
         } catch (error:any) {
             console.log(error)
-            setMessage(error?.response?.data?.message);
+            setMessage('registration failed: ' + error?.response?.data?.message);
         }
     };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ToggleButton.css';
+import './ToggleButton.component.css';
 
 interface ToggleButtonProps {
   onToggle: (isChecked: boolean) => void;
@@ -20,6 +20,7 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
 
   return (
     <div
+      data-testid='toggle-button'
       className={`toggle-button ${isChecked ? 'checked' : ''}`}
       onClick={handleToggle}
     >

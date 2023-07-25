@@ -57,7 +57,7 @@ export class ApiInterceptor {
       const response = await this._axiosInstance.get(url, config);
       return response?.data;
     } catch (error: any) {
-      return Promise.reject(error.response.data);
+      return Promise.reject(error?.response?.data);
     }
   };
   public postData = async (url: string, data: any) => {
@@ -66,7 +66,7 @@ export class ApiInterceptor {
       const response = await this._axiosInstance?.post(url, data, config);
       return response?.data;
     } catch (error: any) {
-      return Promise.reject(error.response.data);
+      return Promise.reject(error?.response?.data);
     }
   };
   public putData = async (url: string, data: any) => {
@@ -75,7 +75,7 @@ export class ApiInterceptor {
       const response = await this._axiosInstance?.put(url, data, config);
       return response?.data;
     } catch (error: any) {
-      return Promise.reject(error.response.data);
+      return Promise.reject(error?.response?.data);
     }
   };
   public deleteData = async (url: string) => {
@@ -84,7 +84,7 @@ export class ApiInterceptor {
       const response = await this._axiosInstance?.delete(url, config);
       return response?.data;
     } catch (error: any) {
-      return Promise.reject(error.response.data);
+      return Promise.reject(error?.response?.data);
     }
   };
   public patchData = async (url: string, data: any) => {
@@ -93,7 +93,7 @@ export class ApiInterceptor {
       const response = await this._axiosInstance?.patch(url, data, config);
       return response?.data;
     } catch (error: any) {
-      return Promise.reject(error.response.data);
+      return Promise.reject(error?.response?.data);
     }
   };
 }

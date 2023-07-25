@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Card.css';
+import './Card.component.css';
 
 interface CardProps {
   title: string;
@@ -13,7 +13,7 @@ interface CardActionProps {
   onClick: () => void;
 }
 
-const CardWithActions:React.FC<CardProps> = ({title,body,actionButtons,className}) => {
+const Card:React.FC<CardProps> = ({title,body,actionButtons,className}) => {
   const [isToggled, setIsToggled] = useState<boolean>(false);
   return (
     <div className={`card ${className?? ''}`}>
@@ -60,4 +60,4 @@ const CardWithActions:React.FC<CardProps> = ({title,body,actionButtons,className
     </div>
   );
 };
-export default CardWithActions;
+export default Card;

@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom';
 import PostList from '../manage-posts/posts-list/PostsList';
-import { getPosts } from '../../services/Posts.service';
 import './Home.css';
 
 const Home: React.FC = () => {
