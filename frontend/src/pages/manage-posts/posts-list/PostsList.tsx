@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {deletePost, getPosts} from '../../../services/Posts.service';
 import {Post} from '../../../interfaces/post.interface';
 import Table, {Column} from '../../../components/shared/table/Table.component';
-import ToggleButton from '../../../components/toggle-button/ToggleButton';
+import ToggleButton from '../../../components/shared/toggle-button/ToggleButton';
 import Card from '../../../components/shared/card/Card';
 import {formatDate} from '../../../utils/Date.helper';
 import './PostsList.css';
