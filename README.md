@@ -6,13 +6,13 @@ This is a project that manage posts (Creat, Read, Update and Delete)
 2- install Mongoos
 
 # Build and run Backend project
-1- navigate to backend directory
+1- goto backend directory
 2- run the following command 'npm install' to install all packages
 3- run the following command 'npm start' to run the backend
 4- it will run using the following URL 'http://localhost:5000'
 
 # Build and run Frondend project
-1- navigate to frontend directory
+1- goto to frontend directory
 2- run the following command 'npm install' to install all packages
 3- run the following command 'npm start' to run the frontend
 4- it will run using the following URL 'http://localhost:3000'
